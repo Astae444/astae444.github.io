@@ -28,6 +28,28 @@
     <script src="scripts/require.js"></script>
     <script src="scripts/delaunay.js"></script>
     <script src="scripts/stopExecOnTimeout.js"></script>
+    <!-- SCRIPTS BUTTON -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".toggle-description");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const description = button.previousElementSibling;
+            if (
+              description.style.display === "none" ||
+              description.style.display === ""
+            ) {
+              description.style.display = "block";
+              button.textContent = "Voir moins";
+            } else {
+              description.style.display = "none";
+              button.textContent = "Voir plus";
+            }
+          });
+        });
+      });
+    </script>
   </head>
 
   <body>
@@ -127,7 +149,7 @@
                 <h3>[Stage] Inovaxo</h3>
                 <span><i>Janvier 2023 - Février 2023</i></span>
                 <p>
-                  Stage de 5 semaines auprès du service technique et delivery de
+                  Stage de 5 semaines auprès du service support et delivery de
                   la société Inovaxo avec pour mission le montage,
                   l'installation et la configuration de postes de travail, de
                   périphériques (imprimantes, tablettes Android, pockets), de
@@ -225,7 +247,7 @@
               </div>
               <div>
                 <h3>Baccalauréat Général</h3>
-                <span><i>Juillet 2020 - Septembre 2017</i></span>
+                <span><i>Septembre 2017 - Juillet 2020</i></span>
                 <p>
                   Obtention d'un Baccalauréat général avec les spécialités
                   Mathématiques option experte et Sciences et Vie de la Terre
@@ -247,32 +269,51 @@
               <div class="skill-card">
                 <img src="images\skills\linux.png" alt="" />
                 <p>Linux</p>
-                <span>Ubuntu, Debian, CentOS, Alpine</span>
+                <span class="description"
+                  >Installation et administration de serveurs Ubuntu, Debian,
+                  CentOS, Alpine (serveurs webs, bases de données, applicatif,
+                  DNS, DHCP, load-balancer, backup, bastion SSH...)</span
+                >
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\windows.png" alt="" />
                 <p>Windows</p>
-                <span></span>
+                <span class="description"
+                  >Installation et administration des postes Windows et Windows
+                  Server</span
+                >
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\ad.png" alt="" />
                 <p>Active Directory</p>
-                <span></span>
+                <span class="description"
+                  >Installation et administration de forêts Active Directory,
+                  mise en place de GPO</span
+                >
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\vmware.png" alt="" />
                 <p>Virtualisation</p>
-                <span>ESXi, Workstation, Proxmox</span>
+                <span class="description"
+                  >ESXi (vSphere / vCenter), Workstation, Proxmox</span
+                >
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\docker.png" alt="" />
                 <p>Conteneurisation</p>
-                <span>Docker (Compose, Swarm)</span>
+                <span class="description"
+                  >Utilisation de Docker (Dockerfile, Compose, Swarm)</span
+                >
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\ansible.png" alt="" />
                 <p>Ansible</p>
-                <span></span>
+                <button class="toggle-description">Voir plus</button>
               </div>
             </div>
             <h3>Bases de données :</h3>
@@ -280,17 +321,20 @@
               <div class="skill-card">
                 <img src="images\skills\postgresql.png" alt="" />
                 <p>PostgreSQL</p>
-                <span></span>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\mariadb-mysql.png" alt="" />
                 <p>MariaDB & MySQL</p>
-                <span></span>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\sqlserver.png" alt="" />
                 <p>SQL Server</p>
-                <span></span>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
               </div>
             </div>
             <h3>Supervision</h3>
@@ -298,17 +342,26 @@
               <div class="skill-card">
                 <img src="images\skills\zabbix.png" alt="" />
                 <p>Zabbix</p>
-                <span></span>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\grafana.png" alt="" />
                 <p>Grafana</p>
-                <span></span>
+                <span class="description"
+                  >Création de dashboard et mise en place de système d'alerting,
+                  installation et configuration de Prometheus</span
+                >
+                <button class="toggle-description">Voir plus</button>
               </div>
               <div class="skill-card">
                 <img src="images\skills\graylog.png" alt="" />
                 <p>Graylog</p>
-                <span></span>
+                <span class="description"
+                  >Installation et configuration de Graylog, analyse de logs
+                  ElasticSearch</span
+                >
+                <button class="toggle-description">Voir plus</button>
               </div>
             </div>
           </div>

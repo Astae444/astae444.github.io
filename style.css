@@ -82,7 +82,12 @@ hr.solid {
 .content {
   flex: 1;
   padding: 20px;
-  margin-left: 250px;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    margin-left: 250px;
+  }
 }
 
 .btn {
@@ -104,16 +109,7 @@ hr.solid {
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 100%;
-    position: absolute;
-    height: 100%;
-    z-index: 1;
-    left: -100%;
-    transition: left 0.3s;
-  }
-
-  .sidebar.active {
-    left: 0;
+    display: none;
   }
 }
 
@@ -121,6 +117,13 @@ hr.solid {
   height: 100vh;
   justify-content: center;
   flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 80vh;
+    display: block;
+  }
 }
 
 #hero h1 {
@@ -186,6 +189,21 @@ hr.solid {
 
 .skill-card p {
   margin-top: 1rem;
+}
+
+.description {
+  display: none;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.toggle-description {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  color: var(--primary-color);
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .contact-container {
