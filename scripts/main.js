@@ -30,7 +30,7 @@ var particleCount = 40,
   (renderMesh = false),
   (flicker = true),
   (flickerSmoothing = 15), // higher = smoother flicker
-  (blurSize = 5),
+  (blurSize = 3),
   (orbitTilt = true),
   (randomMotion = true),
   (noiseLength = 1000),
