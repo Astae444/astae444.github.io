@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mathis Crochet</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- SCRIPTS BACKGROUND -->
+    <script src="scripts/delaunay.js"></script>
+    <script src="scripts/stopExecOnTimeout.js"></script>
+    <script defer src="scripts/main.js"></script>
+    <!-- SCRIPTS BUTTON -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".toggle-description");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const description = button.previousElementSibling;
+            if (
+              description.style.display === "none" ||
+              description.style.display === ""
+            ) {
+              description.style.display = "block";
+              button.textContent = "Voir moins";
+            } else {
+              description.style.display = "none";
+              button.textContent = "Voir plus";
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <canvas id="stars" style="position: fixed; z-index: -1"></canvas>
+
+    <!-- SIDEBAR -->
+    <div class="container">
+      <nav class="sidebar">
+        <h2>Mathis Crochet</h2>
+        <ul>
+          <li>
+            <a href="#" class="btn"
+              ><i class="fa-solid fa-house"></i> Accueil</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="btn"
+              ><i class="fa-solid fa-lightbulb"></i> Projets</a
+            >
+          </li>
+          <li>
+            <a href="#pro" class="btn"
+              ><i class="fa-solid fa-building"></i> Expérience pro</a
+            >
+          </li>
+          <li>
+            <a href="#study" class="btn"
+              ><i class="fa-solid fa-school"></i> Expérience scolaire</a
+            >
+          </li>
+          <li>
+            <a href="#skills" class="btn"
+              ><i class="fa-solid fa-tag"></i> Compétences</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="btn"
+              ><i class="fa-solid fa-phone"></i> Me contacter</a
+            >
+          </li>
+          <li>
+            <a href="#" class="btn"
+              ><i class="fa-solid fa-download"></i> Télécharger mon CV</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <div class="container" id="hero">
+          <h1>Bienvenue sur mon portfolio :)</h1>
+          <p>Administrateur Systèmes, Réseaux et Bases de données</p>
+        </div>
+
+        <hr class="solid" />
+
+        <div class="container" id="projects">
+          <h2>Mes projets</h2>
+        </div>
+
+        <hr class="solid" />
+
+        <div id="pro">
+          <h2>Mes expériences professionnelles</h2>
+          <div class="exp-container">
+            <div class="exp-card">
+              <div>
+                <img src="images\logo-livee.png" alt="LiveE" />
+              </div>
+              <div>
+                <h3>[Alternance] LiveE</h3>
+                <span><i>Juillet 2023 - Aujourd'hui</i></span>
+                <p>
+                  Alternance de 3 ans et 6 mois au sein de LiveE, agence
+                  d'événementielle en tant qu'administrateur systèmes et
+                  réseaux. J'ai pu mener à bien de nombreux projets et travaillé
+                  sur diverses missions tels que : - Le développpement d'un
+                  prototype de serveur eCDN au déploiement automatisé pour la
+                  diffusion de vidéos en streaming HTTPS / P2P - Le
+                  développement de plusieurs scripts Python / Bash
+                  d'automatisation métiers - La mise en place de solutions de
+                  tests de non régression automatisés sur la plateforme LiveE -
+                  La mise en place de tests de charges web Loadster / Apache
+                  JMeter et veilles / benchmark matériels - La migration de
+                  serveurs GKE vers un cluster K3S internalisé - Le suivi de
+                  plusieurs pentests internes et la résolution de failles
+                  remontés ainsi que la mise en place de tests réguliers via
+                  Pentest-Tools - Le suivi / création / résolution continue de
+                  tickets variés Cette expérience m'a également permis
+                  d'acquérir certaines qualités spécifiques au secteur de
+                  l'événementiel.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card">
+              <div>
+                <img src="images\inovaxo.jpg" alt="Inovaxo" />
+              </div>
+              <div>
+                <h3>[Stage] Inovaxo</h3>
+                <span><i>Janvier 2023 - Février 2023</i></span>
+                <p>
+                  Stage de 5 semaines auprès du service support et delivery de
+                  la société Inovaxo avec pour mission le montage,
+                  l'installation et la configuration de postes de travail, de
+                  périphériques (imprimantes, tablettes Android, pockets), de
+                  NAS, ainsi que de serveurs HP avec Windows Server 2019 ou
+                  2022, Active Directory, RDS, SQL Server et des outils de
+                  prises en main à distance.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card">
+              <div>
+                <img src="images\groupe-pilote.png" alt="Groupe Pilote" />
+              </div>
+              <div>
+                <h3>[Stage] Groupe Pilote</h3>
+                <span><i>Mai 2022 - Juin 2022</i></span>
+                <p>
+                  Stage de 5 semaines auprès du service informatique du Groupe
+                  Pilote aboutissant à la migration d'un serveur GLPI sous Linux
+                  CentOS 7 vers une distribution Linux plus récente (Rocky) et
+                  l'ajout de protocoles de sécurité ainsi que la rédaction de
+                  documentation technique.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="solid" />
+
+        <div id="study">
+          <h2>Mes expériences scolaires</h2>
+          <div class="exp-container">
+            <div class="exp-card">
+              <div>
+                <img src="images\epsi.png" alt="EPSI" />
+              </div>
+              <div>
+                <h3>Expert en Informatique et Système d’Information</h3>
+                <span><i>Septembre 2024 - Aujourd'hui</i></span>
+                <p>
+                  Cursus de 2 ans en alternance aboutissant à l'obtention de la
+                  Certification professionnelle de niveau 7 RNCP35584 « Expert
+                  en informatique et système d’information » (Bac +5) Décision
+                  de France Compétences 19-05-2021. Années de cours en
+                  alternance à l'EPSI Nantes visant à former à la gestion de
+                  projets informatiques tout en approfondissant les compétences
+                  techniques liés au cloud et à l'automatisation des
+                  informatiques
+                </p>
+              </div>
+            </div>
+            <div class="exp-card">
+              <div>
+                <img src="images\epsi.png" alt="EPSI" />
+              </div>
+              <div>
+                <h3>Administrateur Systèmes, Réseau et Bases de Données</h3>
+                <span><i>Septembre 2023 - Septembre 2024</i></span>
+                <p>
+                  Obtention de la certification professionnelle de niveau 6
+                  RNCP35594 "Administrateur systèmes, réseau et bases de
+                  données" (Bac +3) délivrée par l'ADIP-IPI. Année de cours en
+                  alternance à l'EPSI Nantes visant à former à l’installation et
+                  à la surveillance de l’ensemble des équipements informatiques
+                  tant physiques que virtuels, veiller à la cohérence et la
+                  qualité des données dans le respect des dispositions et
+                  procédures en vigueur dans l’entreprise, ainsi qu'à garantir
+                  la bonne exploitation des ressources informatiques confiées
+                  dans un objectif de qualité, de productivité, de
+                  disponibilité, avec une préoccupation constante quant à la
+                  sécurité de son système d’information.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card">
+              <div>
+                <img src="images\epsi.png" alt="EPSI" />
+              </div>
+              <div>
+                <h3>BTS SIO option SISR</h3>
+                <span><i>Septembre 2021 - Juillet 2023</i></span>
+                <p>
+                  Obtention du BTS SIO (Services Informatiques aux
+                  Organisations) option SISR (Solutions d'Infrastructure,
+                  Systèmes et Réseaux) avec une moyenne de 14,77. Cursus de 2
+                  ans auprès de l'EPSI Nantes permettant d'acquérir des
+                  compétences en administration des systèmes et réseaux, en
+                  sécurité informatique, ainsi qu’en déploiement et supervision
+                  d’infrastructures. Le diplôme vise également à former sur
+                  l'adaptation aux évolutions technologiques pour répondre plus
+                  efficacement aux besoins des entreprises.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card">
+              <div>
+                <img src="images\alcide.png" alt="Alcide d'Orbigny" />
+              </div>
+              <div>
+                <h3>Baccalauréat Général</h3>
+                <span><i>Septembre 2018 - Juillet 2021</i></span>
+                <p>
+                  Obtention d'un Baccalauréat général avec les spécialités
+                  Mathématiques option experte et Sciences et Vie de la Terre
+                  avec une mention Bien au lycée général et technologique Alcide
+                  d'orbigny à Bouaye.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="solid" />
+
+        <div id="skills">
+          <h2>Mes compétences</h2>
+          <div>
+            <h3>Systèmes & Réseaux :</h3>
+            <div class="skills-container">
+              <div class="skill-card">
+                <img src="images\skills\linux.png" alt="Linux" />
+                <p>Linux</p>
+                <span class="description"
+                  >Administration de serveurs Ubuntu, Debian, CentOS, Alpine
+                  (serveurs webs, bases de données, applicatif, DNS, DHCP,
+                  load-balancer, backup, VPN, bastion SSH...)</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\windows.png" alt="Windows" />
+                <p>Windows</p>
+                <span class="description"
+                  >Installation et administration des postes Windows et Windows
+                  Server</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\ad.png" alt="Active Directory" />
+                <p>Active Directory</p>
+                <span class="description"
+                  >Installation et administration de forêts Active Directory,
+                  mise en place de GPO</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\vmware.png" alt="VMWare" />
+                <p>Virtualisation</p>
+                <span class="description"
+                  >ESXi (vSphere / vCenter), Workstation, Proxmox</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\docker.png" alt="Docker" />
+                <p>Conteneurisation</p>
+                <span class="description"
+                  >Utilisation de Docker (Dockerfile, Compose, Swarm)</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\ansible.png" alt="Ansible" />
+                <p>Ansible</p>
+                <span class="description"
+                  >Automatisation de l'infra et gestion de config avec Ansible
+                  (playbooks, rôles, orchestration)</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\pfsense.png" alt="PfSense" />
+                <p>PfSense</p>
+                <span class="description"
+                  >Routage inter-réseaux, mise en place de règles de pare-feu,
+                  HSRP, VPN</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\bash.png" alt="Bash" />
+                <p>Scripting</p>
+                <span class="description"
+                  >Création de script Bash et Python pour l'automatisation de
+                  tâches systèmes</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+            </div>
+            <h3>Bases de données :</h3>
+            <div class="skills-container">
+              <div class="skill-card">
+                <img src="images\skills\postgresql.png" alt="PostgreSQL" />
+                <p>PostgreSQL</p>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\mariadb-mysql.png" alt="MariaDB" />
+                <p>MariaDB & MySQL</p>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\sqlserver.png" alt="SQL Server" />
+                <p>SQL Server</p>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
+              </div>
+            </div>
+            <h3>Supervision</h3>
+            <div class="skills-container">
+              <div class="skill-card">
+                <img src="images\skills\zabbix.png" alt="Zabbix" />
+                <p>Zabbix</p>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\grafana.png" alt="Grafana" />
+                <p>Grafana</p>
+                <span class="description"
+                  >Création de dashboard et mise en place de système d'alerting,
+                  installation et configuration de Prometheus</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\graylog.png" alt="Graylog" />
+                <p>Graylog</p>
+                <span class="description"
+                  >Installation et configuration de Graylog, analyse de logs
+                  ElasticSearch</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+            </div>
+            <h3>Data Sciences :</h3>
+            <div class="skills-container">
+              <div class="skill-card">
+                <img src="images\skills\powerbi.png" alt="Power BI" />
+                <p>Power BI</p>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\r.png" alt="R" />
+                <p>R & R Studio</p>
+                <span class="description"></span>
+                <button class="toggle-description">Voir plus</button>
+              </div>
+              <div class="skill-card">
+                <img src="images\skills\python.png" alt="Python" />
+                <p>Machine Learning</p>
+                <span class="description"
+                  >Analyse de données (Pandas, NumPy), visualisation
+                  (Matplotlib) et machine learning (TensorFlow)</span
+                >
+                <button class="toggle-description">Voir plus</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="solid" />
+
+        <div id="contact">
+          <h2>Me contacter</h2>
+          <div class="contact-container">
+            <p>Par mail :</p>
+            <a href="mailto:mathiscrochet@gmail.com">
+              mathiscrochet@gmail.com</a
+            >
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/mathis-crochet"
+                  target="_blank"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://github.com/Astae444" target="_blank"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
